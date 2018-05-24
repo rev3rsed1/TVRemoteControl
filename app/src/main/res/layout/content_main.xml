@@ -8,13 +8,96 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <ImageView
+        android:id="@+id/play_button"
+        android:layout_width="80dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/midline"
+        app:layout_constraintTop_toTopOf="@+id/midline"
+        app:srcCompat="@android:drawable/ic_media_play"
+        tools:layout_editor_absoluteX="140dp" />
+
+    <ImageView
+        android:id="@+id/weiter_button"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/play_button"
+        app:layout_constraintStart_toEndOf="@+id/play_button"
+        app:srcCompat="@android:drawable/ic_media_ff" />
+
+    <ImageView
+        android:id="@+id/zurueck_button"
+        android:layout_width="77dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/play_button"
+        app:layout_constraintEnd_toStartOf="@+id/play_button"
+        app:srcCompat="@android:drawable/ic_media_rew" />
+
     <TextView
+        android:id="@+id/sender_anzeige"
+        android:layout_width="0dp"
+        android:layout_height="112dp"
+        android:text="SENDER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/settings_button"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sender_anzeige"
+        app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+    <ImageView
+        android:id="@+id/fav_button"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/share_button"
+        app:layout_constraintStart_toEndOf="@+id/zapp_switch"
+        app:srcCompat="@android:drawable/btn_star_big_off" />
+
+    <ImageView
+        android:id="@+id/share_button"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/zapp_switch"
+        app:layout_constraintTop_toBottomOf="@+id/volume_bar"
+        app:srcCompat="@android:drawable/ic_menu_share" />
+
+    <TextView
+        android:id="@+id/zapp_switch"
+        android:layout_width="89dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:text="Normal Zapp"
+        app:layout_constraintBottom_toBottomOf="@+id/share_button"
+        tools:layout_editor_absoluteX="136dp" />
+
+    <SeekBar
+        android:id="@+id/volume_bar"
+        android:layout_width="247dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/weiter_button"
+        app:layout_constraintStart_toStartOf="@+id/zurueck_button"
+        app:layout_constraintTop_toBottomOf="@+id/play_button" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/midline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="253dp" />
 
 </android.support.constraint.ConstraintLayout>
